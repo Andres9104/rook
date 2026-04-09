@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "primary-container": "#0047ff",
+                    "background": "#131313",
+                    "primary": "#b9c3ff",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#001257",
+                    "tertiary": "#ffb4a2",
+                    "inverse-primary": "#0046fa",
+                    "on-secondary-fixed-variant": "#2d3f93",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed": "#dde1ff",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#8a1c00",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#11277b",
+                    "surface": "#131313",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "on-error": "#690005",
+                    "surface-bright": "#3a3939",
+                    "outline": "#8e8fa3",
+                    "on-secondary-container": "#a2b1ff",
+                    "tertiary-fixed": "#ffdad2",
+                    "surface-dim": "#131313",
+                    "on-primary-container": "#d4d9ff",
+                    "tertiary-container": "#b82800",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#b9c3ff",
+                    "secondary-container": "#2d3f93",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed": "#dde1ff",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#ffb4a2",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#434657",
+                    "on-tertiary": "#621100",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#c4c5da",
+                    "on-secondary-fixed": "#001257",
+                    "on-tertiary-fixed": "#3d0700",
+                    "on-primary": "#00228a",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "secondary": "#b9c3ff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-container": "#ffd1c6",
+                    "secondary-fixed-dim": "#b9c3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .perspective-card {
+            perspective: 1000px;
+        }
+        .perspective-content {
+            transform: rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+            transition: transform 0.5s ease;
+        }
+        .perspective-card:hover .perspective-content {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-white font-['Space_Grotesk']">ROOK</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-white border-b-2 border-[#0047FF] pb-1 font-['Space_Grotesk'] tracking-tight hover:text-[#0047FF] transition-colors duration-300" href="#">Work</a>
+<a class="text-[#3A3939] dark:text-[#E5E2E1] font-['Space_Grotesk'] tracking-tight hover:text-[#0047FF] transition-colors duration-300" href="#">Studio</a>
+<a class="text-[#3A3939] dark:text-[#E5E2E1] font-['Space_Grotesk'] tracking-tight hover:text-[#0047FF] transition-colors duration-300" href="#">Journal</a>
+<a class="text-[#3A3939] dark:text-[#E5E2E1] font-['Space_Grotesk'] tracking-tight hover:text-[#0047FF] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold py-3 px-8 rounded-lg scale-95 active:duration-100 transition-all font-['Space_Grotesk'] tracking-tight">
+            Get Started
+        </button>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-12 py-24 max-w-[1920px] mx-auto">
+<div class="grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 lg:col-span-8">
+<span class="text-primary font-label tracking-[0.2em] text-sm mb-4 block">PORTFOLIO</span>
+<h1 class="text-7xl md:text-9xl font-headline font-bold tracking-tighter leading-[0.9] text-white">
+                        Selected<br/>Artifacts.
+                    </h1>
+</div>
+<div class="col-span-12 lg:col-span-4 lg:pb-4">
+<p class="text-xl text-on-surface-variant font-light leading-relaxed">
+                        A curated collection of digital architecture for visionary brands in Real Estate, Healthcare, and high-end E-commerce.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Category Filter -->
+<section class="px-12 mb-16 max-w-[1920px] mx-auto">
+<div class="flex gap-8 border-b border-outline-variant/15 pb-4">
+<button class="text-white font-headline text-lg relative after:absolute after:bottom-[-17px] after:left-0 after:w-full after:h-[2px] after:bg-primary">All Projects</button>
+<button class="text-on-surface-variant hover:text-white font-headline text-lg transition-colors">Real Estate</button>
+<button class="text-on-surface-variant hover:text-white font-headline text-lg transition-colors">Healthcare</button>
+<button class="text-on-surface-variant hover:text-white font-headline text-lg transition-colors">E-commerce</button>
+</div>
+</section>
+<!-- Portfolio Bento Grid -->
+<section class="px-12 pb-32 max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Project 1: Real Estate (Large) -->
+<div class="md:col-span-8 group">
+<div class="bg-surface-container-low rounded-xl overflow-hidden h-[600px] relative perspective-card">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="p-12 h-full flex flex-col justify-between">
+<div class="z-10">
+<span class="bg-primary/10 text-primary px-3 py-1 text-xs tracking-widest uppercase font-bold rounded-full">Real Estate</span>
+<h3 class="text-4xl font-headline font-bold text-white mt-4">Vanguard Estates</h3>
+<p class="text-on-surface-variant mt-2 max-w-sm">Luxury residential platform with interactive architectural walkthroughs.</p>
+</div>
+<div class="perspective-content self-end w-full max-w-2xl transform translate-y-12 translate-x-12">
+<img alt="Luxury modern villa interior" class="rounded-lg shadow-2xl" data-alt="Modern architectural luxury villa interior with clean lines, large glass windows, and minimalist furniture in soft golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZy-Y_un9-4X-_Cii7J6rCSLn5jWj4wJakMh2KcWq4vUyYNCCg46MTSPnpGg2wt0Lo7zXWGdurdkuD32VS26ZhMzaj9qZ2B1EiZYSPGcJET0P1hEVw1Iml1dRG81Hqc2TL-Pe6BMnlUqC0Fugze97Ujyj0kksiYrBM0tqGnuesrhpoYiA5LhHu7c8PU47o_YytXssioZlgIlAO2e91M55KgTKOZx9_NfBNInbvO7GTIaHeSS4FNQMaZj-lMU2f4YuRVkn8KWNW8W0"/>
+<div class="absolute -top-10 -left-10 w-48 h-96 bg-surface-container-high rounded-xl shadow-2xl p-2 border border-outline-variant/10 hidden md:block">
+<img alt="Mobile app interface" class="rounded-lg h-full object-cover" data-alt="Smartphone screen showing a clean real estate mobile application interface with property listings and high-end imagery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS67lYUnHDoO72TY3sRDvKfxsnnovT-xILKRDUfWssDZ1bmZQLZsdP37bNJo_IW7l8azNH5qn8o-CPG-Vv7pzeUIKXc1L_uj-nVAqwC4KSTNCA2zmeas-cGb1KTketAEZBp0H1OoJNQ7b9mFFH-3KfRx6aS9Fbmiejbm5sjJFCE_lHSXYfCemq5vJNQoDzpFqA6Ov9PJX116eKtrLv9GgSJ8ew121NFC4tpZVtx-ud9FPBbUJCeMiI0yVMQeIsUOafryJCWr2I7Tg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: Healthcare (Small) -->
+<div class="md:col-span-4 group">
+<div class="bg-surface-container-low rounded-xl overflow-hidden h-[600px] flex flex-col">
+<div class="p-12">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 text-xs tracking-widest uppercase font-bold rounded-full">Healthcare</span>
+<h3 class="text-4xl font-headline font-bold text-white mt-4">Aura Health</h3>
+<p class="text-on-surface-variant mt-2">Patient-first diagnostic dashboard for modern clinics.</p>
+</div>
+<div class="mt-auto px-12 pb-0">
+<div class="bg-surface-container-highest rounded-t-xl p-4 shadow-2xl transform translate-y-8 group-hover:translate-y-4 transition-transform duration-500">
+<div class="w-full aspect-square bg-surface-container flex items-center justify-center rounded-lg overflow-hidden">
+<img alt="Healthcare Interface" class="w-full h-full object-cover" data-alt="Digital healthcare dashboard on a tablet showing clean medical data visualizations, heart rate graphs, and patient records in a professional blue tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpRAx_DpK_0C9x99nFKsOdM5zb9TFTHyZmIaK7u0jgXkFQDdY-SnLeQtV5R139tMlvgZjYQVw0qaNZAzmijEGdBuVVPWTfOAkrcsHEf6MCx4tGBsmdargv1crzqUrZIN8El2qTp8Wi2mEzMUkaKWWDvN0Nl7JT6Ykr9yebbC_5F9mzCLt_C7kcNjQLFdwXBu-NfugyabiQ-Afad8iQ5VQ0tIDPXqXn8iaWXjAiFn0l9keJXSIp4R41OZ3Q8eCC2mOgx-vZKP_AIY"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 3: E-commerce (Asymmetric) -->
+<div class="md:col-span-5 group">
+<div class="bg-surface-container-low rounded-xl overflow-hidden h-[500px] relative">
+<div class="p-12">
+<span class="bg-primary-container/20 text-primary-container px-3 py-1 text-xs tracking-widest uppercase font-bold rounded-full">E-commerce</span>
+<h3 class="text-4xl font-headline font-bold text-white mt-4">KRONOS</h3>
+<p class="text-on-surface-variant mt-2">Precision timepiece boutique.</p>
+</div>
+<div class="absolute bottom-0 right-0 w-3/4 transform translate-y-10 translate-x-10 group-hover:translate-y-4 group-hover:translate-x-4 transition-transform duration-500">
+<img alt="Watch product" class="rounded-lg shadow-2xl" data-alt="High-end luxury watch product photography on a dark textured background with dramatic lighting and professional retouching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6iZP0nwFuFz9n0UXCpepkykV6BGDFvRlSoFm4dWLSPdNdgP-vX1r-b-Be8bgBWI-Cjcx9vdQSJzoJHoUPnaisVKh3kVxZQt48XK7WdfVFYaVDQjs-H_Cs4AZHejYz8IrCFRLEfpJ1g5zf-NA9dObfoYsyMA7wCxpfiO1zIvDPnarb3-Mb4Ezk262nTOi-V6udry3pRetLof_tPL8a31xzejGEAt5uDLHKeJuCrq6wYBtrK0B0UbgmPrlBMTPQaTDqgwyWMHDaMfQ"/>
+</div>
+</div>
+</div>
+<!-- Project 4: Real Estate (Full Width Inset) -->
+<div class="md:col-span-7 group">
+<div class="bg-[#0047FF] rounded-xl overflow-hidden h-[500px] flex items-center relative">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="grid grid-cols-2 w-full gap-8 p-12 relative z-10">
+<div>
+<span class="text-white/80 text-xs tracking-widest uppercase font-bold">Real Estate</span>
+<h3 class="text-5xl font-headline font-bold text-white mt-4">The Linear</h3>
+<p class="text-white/70 mt-4 leading-relaxed">Redefining high-density urban living through algorithmic floorplan generation.</p>
+<button class="mt-8 flex items-center gap-2 text-white font-bold group/btn">
+                                    View Case Study 
+                                    <span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex justify-center items-center">
+<div class="w-64 h-[400px] bg-surface rounded-2xl p-2 shadow-2xl transform rotate-6 hover:rotate-0 transition-transform duration-500">
+<img alt="Modern Skyscraper" class="h-full w-full object-cover rounded-xl" data-alt="Architectural photograph of a modern glass skyscraper reflecting the sky with geometric precision and blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5_zMHbvCxYxlNLKk1-VAwEW_okp9gC1GiHpjk8H5A_k4CXwQtRhdpMThtm-NhsL0cGkjMDVOmdsIf0pvzqFnJz8c0K6zSfH0mdqR4scnIkdo2MNpDxAZJvr5WvJ_OgZtnunxIIvT3CmKPaQPxltRNJKFIM14FsxN6CcJXwgiVgbfHNZaBFI9F1ArWT2cSDOYHI1EVfEBLqUqzWWhz_RNamX7oTUcK-XMMCU_YGmQpIQcuwX6ZkSrfrNcdC4olHT7aZoFfHlc2ahc"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px]"></div>
+<div class="px-12 max-w-[1920px] mx-auto text-center">
+<h2 class="text-6xl md:text-8xl font-headline font-bold tracking-tighter text-white mb-12">
+                    Ready to build your <span class="text-primary">legacy?</span>
+</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-white text-black font-headline font-bold px-12 py-6 rounded-lg text-xl hover:bg-primary transition-colors">Start a Project</button>
+<button class="border border-outline-variant/30 text-white font-headline font-bold px-12 py-6 rounded-lg text-xl hover:bg-surface-container-high transition-colors">Our Process</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] dark:bg-[#0E0E0E] w-full py-24 px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-[1920px] mx-auto">
+<div>
+<div class="text-xl font-bold text-white mb-6 font-['Inter']">ROOK</div>
+<p class="text-[#3A3939] font-['Inter'] text-sm tracking-wide leading-relaxed">
+                    Digital architects crafting the future of high-end commercial digital experiences.
+                </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 font-['Inter']">Social</h4>
+<ul class="space-y-4">
+<li><a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm" href="#">Instagram</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm" href="#">LinkedIn</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm" href="#">Behance</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 font-['Inter']">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 font-['Inter']">Contact</h4>
+<p class="text-[#3A3939] font-['Inter'] text-sm mb-4">hello@rook.digital</p>
+<div class="h-[1px] w-full bg-outline-variant/10"></div>
+<p class="text-[#3A3939] font-['Inter'] text-xs mt-6">
+                    © 2024 ROOK Digital Architecture. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

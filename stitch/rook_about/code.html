@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "primary-container": "#0047ff",
+                    "background": "#131313",
+                    "primary": "#b9c3ff",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#001257",
+                    "tertiary": "#ffb4a2",
+                    "inverse-primary": "#0046fa",
+                    "on-secondary-fixed-variant": "#2d3f93",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed": "#dde1ff",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#8a1c00",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#11277b",
+                    "surface": "#131313",
+                    "on-primary-fixed-variant": "#0033c0",
+                    "on-error": "#690005",
+                    "surface-bright": "#3a3939",
+                    "outline": "#8e8fa3",
+                    "on-secondary-container": "#a2b1ff",
+                    "tertiary-fixed": "#ffdad2",
+                    "surface-dim": "#131313",
+                    "on-primary-container": "#d4d9ff",
+                    "tertiary-container": "#b82800",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#b9c3ff",
+                    "secondary-container": "#2d3f93",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed": "#dde1ff",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#ffb4a2",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#434657",
+                    "on-tertiary": "#621100",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#c4c5da",
+                    "on-secondary-fixed": "#001257",
+                    "on-tertiary-fixed": "#3d0700",
+                    "on-primary": "#00228a",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "secondary": "#b9c3ff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-container": "#ffd1c6",
+                    "secondary-fixed-dim": "#b9c3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-bg { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#131313]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+<a class="text-2xl font-bold tracking-tighter text-white font-['Space_Grotesk']" href="#">ROOK</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Work</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Studio</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-white border-b-2 border-[#0047FF] pb-1 hover:text-[#0047FF] transition-colors duration-300" href="#">Journal</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-[#b9c3ff] to-[#0047ff] text-on-primary-fixed px-6 py-2.5 rounded-lg font-medium text-sm hover:brightness-110 active:scale-95 transition-all">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-6 md:px-12 max-w-[1920px] mx-auto mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
+                        The Story of <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">ROOK.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                        We are digital architects crafting structural elegance for modern founders. Precision meets creative rebellion.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex justify-start lg:justify-end">
+<div class="bg-surface-container-low p-1 rounded-xl w-full max-w-sm">
+<img alt="Creative Workspace" class="rounded-xl w-full grayscale contrast-125" data-alt="Minimalist workspace with high-end tech equipment, clean desk setup, and dramatic architectural lighting in a dark modern studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPvSKX8s2Fzu4shiwXwTcn9DvR3BuIA1HVtPAbXxrKItFWx-pAkZ1w55k227dBdEb2kE6kBNGAWJIs4xLOsYz3-cwu9gztnY00plAmgOFrhcOaNUq3rwNUNItq17haFQRMRCiOmsmWrax4DYer0tB1oQ-2lEr3NKB7G52VOYEBu4CayBFvRitch7fPpd1zcMkNF45oyLBndGMQ8y6VPjluGG_Hi_311mw4twa5n_PsO_GhfFVFvu5LDeoofKPUzJkbXTIhtT1l82g"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Vision Section -->
+<section class="bg-surface-container-lowest py-32 px-6 md:px-12">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="bg-surface-container-high aspect-[4/5] rounded-lg overflow-hidden relative z-10">
+<img alt="Modern Interface" class="w-full h-full object-cover mix-blend-lighten opacity-80" data-alt="Close up of a sleek 3D rendered glass interface with glowing electric blue accents and architectural grid lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjwrXLJDdZRb9KgtgJYL15vUJddOfgqJSHDLCmItwU_ydjBgDUfIqQ51pdCoDDPU64jNh1ArHET19Neg-dmEzvGPc7FcghE-hJQp3ViF3t4UXnnpV_6DPylai0iV3FxaR_EIM7gGBOpkZVghaornzxRXxuJLhN834RbObDFaTNCFLk60WUJJPCAmvAAtpbwAfJoGI1Z-FvOYg02D1gYf28aLN0RdRTtbeODkz06N_miE7rL0PiWm4e3iXMnDs6MIzHTuC3Ofm59w"/>
+</div>
+</div>
+<div>
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-12">Simplicity is <br/>the ultimate sophistication.</h2>
+<div class="space-y-8 text-lg text-on-surface-variant font-light">
+<p>
+                            ROOK was founded on a simple realization: the digital world is cluttered. For solo-founders and small teams, the noise is the enemy of progress. We built this agency to be the signal.
+                        </p>
+<p>
+                            We don't just "design websites." We architect digital experiences that scale. By stripping away the unnecessary, we reveal the core strength of your product. Our philosophy is rooted in architectural precision—every pixel has a purpose, every interaction has an intent.
+                        </p>
+<div class="flex items-center gap-4 pt-4">
+<div class="h-12 w-12 rounded-full overflow-hidden">
+<img alt="Founder" class="w-full h-full object-cover" data-alt="Professional headshot of a creative director in a dark studio setting with soft side lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzWpWlhqMcwGswzvztOHoh39zXOjaAMyV4y0FRH6Od0TxYjtmycKh7fzJ5CKgK3DX2S3h5RJg7JCr0_75LHFeKtF4uXGhZS1Wgp-0gkBOQXTMY_mXRMCAza7WEHrCFqXmuk1Yba6R1F4qXCgrNRdM7M0XbrJn5iShpVGqndYTz1vrMydCP5SBmKnpZssvkQXi7KLEznMZP5hDhM0uJR4PEwnTP0OvQ2Ok568dZhxvQIqzAELhVok6pvUAav3E4gJVgcSrlEU8zaCI"/>
+</div>
+<div>
+<p class="text-on-surface font-bold">Arthur Vance</p>
+<p class="text-sm opacity-60">Founder &amp; Principal Architect</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Process Section -->
+<section class="py-32 px-6 md:px-12 max-w-[1920px] mx-auto">
+<div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none">Our Process.</h2>
+<p class="text-on-surface-variant max-w-sm text-right">Four stages of technical craftsmanship designed to move from concept to reality at speed.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Step 1 -->
+<div class="group p-8 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all duration-500 flex flex-col justify-between aspect-square">
+<span class="text-sm font-bold text-primary tracking-widest uppercase">01 / Discover</span>
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-4">Deep Dive.</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">We audit your market, your goals, and your friction points to build a strategic foundation.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group p-8 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all duration-500 flex flex-col justify-between aspect-square lg:mt-12">
+<span class="text-sm font-bold text-primary tracking-widest uppercase">02 / Design</span>
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-4">Visual Logic.</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">High-fidelity prototypes that define the visual language and user psychology of your brand.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group p-8 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all duration-500 flex flex-col justify-between aspect-square lg:mt-24">
+<span class="text-sm font-bold text-primary tracking-widest uppercase">03 / Develop</span>
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-4">Pure Tech.</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">Clean code, optimized performance, and scalable infrastructure built for longevity.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group p-8 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all duration-500 flex flex-col justify-between aspect-square lg:mt-36">
+<span class="text-sm font-bold text-primary tracking-widest uppercase">04 / Deliver</span>
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-4">Impact.</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">A seamless launch followed by rigorous testing and refinement to ensure results.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values Bento -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest">
+<div class="max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-full md:h-[600px]">
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-low rounded-xl p-12 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="bolt" data-weight="fill">bolt</span>
+</div>
+<h4 class="text-3xl font-bold mb-4">Electric Speed.</h4>
+<p class="text-on-surface-variant max-w-md">We work in high-intensity sprints, delivering weeks of work in days without sacrificing quality.</p>
+</div>
+<div class="md:col-span-1 md:row-span-2 bg-gradient-to-br from-primary-container to-surface-container-high rounded-xl p-12 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-6xl mb-6 text-white" data-icon="diamond" data-weight="fill">diamond</span>
+<h4 class="text-3xl font-bold text-white mb-4">Pure Quality.</h4>
+<p class="text-white/80">Every line of code and every pixel is polished until it shines. We don't do 'good enough'.</p>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low rounded-xl p-12 flex flex-col justify-end">
+<h4 class="text-3xl font-bold mb-4">Direct Access.</h4>
+<p class="text-on-surface-variant">No account managers. You speak directly with the architects building your vision.</p>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low rounded-xl p-12 flex flex-col justify-end">
+<h4 class="text-3xl font-bold mb-4">Solo Friendly.</h4>
+<p class="text-on-surface-variant">Built for founders who need a technical partner, not just a service provider.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-48 px-6 md:px-12 text-center max-w-[1920px] mx-auto">
+<h2 class="text-6xl md:text-9xl font-bold tracking-tighter mb-12">Ready to Build?</h2>
+<p class="text-xl md:text-3xl font-light text-on-surface-variant mb-12 max-w-3xl mx-auto">
+                Join the architects of the new digital age. Let's create something that lasts.
+            </p>
+<button class="group relative px-12 py-6 overflow-hidden rounded-lg bg-white">
+<div class="absolute inset-0 bg-primary-container translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="relative z-10 text-black group-hover:text-white text-xl font-bold transition-colors">Start Your Project</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] dark:bg-[#0E0E0E] w-full py-24 px-6 md:px-12">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div>
+<h3 class="text-xl font-bold text-white mb-6 font-['Inter']">ROOK</h3>
+<p class="text-[#3A3939] max-w-xs font-['Inter'] text-sm tracking-wide">
+                    Digital architecture for the next generation of founders. Built with precision and a touch of rebellion.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-sm font-bold uppercase tracking-widest mb-2 font-['Inter']">Connect</h4>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Instagram</a>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">LinkedIn</a>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Behance</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-sm font-bold uppercase tracking-widest mb-2 font-['Inter']">Studio</h4>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Work</a>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Journal</a>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-sm font-bold uppercase tracking-widest mb-2 font-['Inter']">Legal</h4>
+<a class="text-[#3A3939] hover:text-white transition-all font-['Inter'] text-sm tracking-wide" href="#">Privacy Policy</a>
+<p class="text-[#3A3939] font-['Inter'] text-sm tracking-wide mt-4">
+                    © 2024 ROOK Digital Architecture. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

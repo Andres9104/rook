@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROOK | Digital Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1b",
+                      "primary-container": "#0047ff",
+                      "background": "#131313",
+                      "primary": "#b9c3ff",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed": "#001257",
+                      "tertiary": "#ffb4a2",
+                      "inverse-primary": "#0046fa",
+                      "on-secondary-fixed-variant": "#2d3f93",
+                      "inverse-on-surface": "#313030",
+                      "primary-fixed": "#dde1ff",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#8a1c00",
+                      "surface-container": "#201f1f",
+                      "on-secondary": "#11277b",
+                      "surface": "#131313",
+                      "on-primary-fixed-variant": "#0033c0",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a3939",
+                      "outline": "#8e8fa3",
+                      "on-secondary-container": "#a2b1ff",
+                      "tertiary-fixed": "#ffdad2",
+                      "surface-dim": "#131313",
+                      "on-primary-container": "#d4d9ff",
+                      "tertiary-container": "#b82800",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#b9c3ff",
+                      "secondary-container": "#2d3f93",
+                      "surface-container-highest": "#353534",
+                      "on-surface": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "secondary-fixed": "#dde1ff",
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed-dim": "#ffb4a2",
+                      "on-error-container": "#ffdad6",
+                      "outline-variant": "#434657",
+                      "on-tertiary": "#621100",
+                      "surface-variant": "#353534",
+                      "on-surface-variant": "#c4c5da",
+                      "on-secondary-fixed": "#001257",
+                      "on-tertiary-fixed": "#3d0700",
+                      "on-primary": "#00228a",
+                      "primary-fixed-dim": "#b9c3ff",
+                      "secondary": "#b9c3ff",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-container": "#ffd1c6",
+                      "secondary-fixed-dim": "#b9c3ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .perspective-card {
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+        .perspective-card:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#131313]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-white font-['Space_Grotesk']">ROOK</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Space_Grotesk'] tracking-tight text-white border-b-2 border-[#0047FF] pb-1 transition-colors duration-300" href="#">Work</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Studio</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Journal</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-semibold px-6 py-2 rounded-lg scale-95 active:duration-100 hover:brightness-110 transition-all">
+                Get Started
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-48 pb-32 px-12 overflow-hidden min-h-screen flex items-center">
+<!-- Abstract Shape Background -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-primary-container blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 right-[10%] w-[400px] h-[400px] bg-primary blur-[100px] rounded-full"></div>
+</div>
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+<div class="lg:col-span-8">
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-white mb-8">
+                    We Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Digital Architectures</span> That Convert
+                </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Innovative web design for forward-thinking businesses. We merge architectural precision with digital soul.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold px-10 py-5 rounded-lg text-lg hover:shadow-[0_0_40px_rgba(0,71,255,0.3)] transition-all">
+                        Get Your Website
+                    </button>
+<button class="border-b-2 border-outline-variant text-white font-bold px-4 py-5 text-lg hover:border-primary transition-all flex items-center gap-2">
+                        View Our Work <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Key Benefits (Bento Grid) -->
+<section class="py-32 px-12 bg-surface-container-lowest">
+<div class="max-w-[1920px] mx-auto">
+<div class="mb-24">
+<h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-white">The ROOK Advantage</h2>
+<div class="w-24 h-1 bg-primary-container mt-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-12 rounded-xl group hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4">Speed</h3>
+<p class="text-on-surface-variant leading-relaxed">Engineered for instantaneous loading. We optimize every millisecond to ensure your users never wait.</p>
+</div>
+<div class="bg-surface-container-low p-12 rounded-xl group hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4">Modern</h3>
+<p class="text-on-surface-variant leading-relaxed">Cutting-edge aesthetics that define industry standards. We don't follow trends; we set them through design.</p>
+</div>
+<div class="bg-surface-container-low p-12 rounded-xl group hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4">Conversion</h3>
+<p class="text-on-surface-variant leading-relaxed">Strategic UX architecture designed to guide users toward action. Your goals are our primary blueprint.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Overview -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-headline text-5xl md:text-6xl font-bold tracking-tight text-white mb-12">Precision Digital Services</h2>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<div class="text-primary font-headline text-2xl font-bold">01</div>
+<div>
+<h4 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">UI/UX Strategy</h4>
+<p class="text-on-surface-variant">Deep-dive research and user flow mapping to ensure intuitive navigation and high engagement.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="text-primary font-headline text-2xl font-bold">02</div>
+<div>
+<h4 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Brand Identity</h4>
+<p class="text-on-surface-variant">Defining your digital persona through high-contrast typography, color science, and visual storytelling.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="text-primary font-headline text-2xl font-bold">03</div>
+<div>
+<h4 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Web Engineering</h4>
+<p class="text-on-surface-variant">Developing robust, scalable architectures using the latest tech stacks for maximum performance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-surface-container-high p-8 rounded-xl aspect-square flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-primary-container/20 transition-all"></div>
+<img alt="Digital Architecture Visualization" class="w-full h-full object-cover rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Minimalist 3D abstract render with glowing blue neon lines and geometric shapes on a deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALZUT6WlwVz3S2ffeWr7-gnFy2JvHBIhEF83I6zrQeMqq9JcONKzGjlW-DdagoWZ9LPqEzmyKwjJRjltdOAV2UQTDXI9TGuY97rzyi4QVVXCyCGe2D_rf1HIMpPhGZF_lv5zu6WfcuS3TuSciHtSxRcy0WXmSuYAoTs_uhe0hrrYVf0fvrfL8Devb607YY3f7rmeuDkQ5EIPkYkbgT8-iTdW8j6603Dl_lpQZ__AwKqnY6ksMb34eLN-WK7q6nETe-1fZ8nsDkuFs"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Preview -->
+<section class="py-32 px-12 bg-surface-container-lowest">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl font-bold text-white mb-6">Recent Constructs</h2>
+<p class="text-on-surface-variant text-lg">A selection of our latest architectural digital breakthroughs across high-stakes industries.</p>
+</div>
+<button class="border-2 border-outline-variant text-white px-8 py-4 rounded-lg font-bold hover:bg-primary-container hover:border-primary-container transition-all">
+                    View Portfolio
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- E-commerce -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container mb-8">
+<img alt="E-commerce Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Clean minimal high-end product photography of a modern watch on a dark stone surface with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVcPwalGP6J2A-Tqy6uSY5JYxVvcaU4Wi4cyl-hk0_Q0dTltlcN9-G1QnGs7y5lwis8zlaOy8NbZOgmBiQzoBkySudv-2PCYCDPROJiue88ccUFMB75mD_2p0lYpDQPCcewg66Rx_G00nJDdMxT0F5MYozBsdes6UUeLTnxXFd7VGCCqH7D8qDA4O5C-B483QqhbedJJg3-wzZi6ANv0DW0fI9DVrk5e6jTZE5NelgF0fHQhZi0goXIXCFM5M8LC0ujLOdWxo6HHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-xs font-bold tracking-widest text-primary uppercase mb-2 block">Retail</span>
+<h4 class="text-2xl font-bold text-white">Veloce Luxury</h4>
+</div>
+</div>
+</div>
+<!-- Real Estate -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container mb-8">
+<img alt="Real Estate Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Architectural photo of a modern glass villa at dusk with warm interior lighting and sharp geometric shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyqganErdJ5YzcVKw7YXXPoZgYEbZREDtkp1KvpOGabtTVUfTiosZ3m8v_zwX6cLlC4zJUr101LN-Kh9juM3EECi7veMiW_0lJ_zavQjeTQVBY8OCZyj_4WiELPsoLJwCGgpXo3OZETpM_mQUjtjiyKi9buIq8QDTvWrHySorFcr1UMoJ-OqfntvLw7i4ZkPsaqKYec6__vtQEcbuKvz60GfpEkolXrJIT5mzwKfOwxtJTsbHY_y_GV-Z9QM6U_zpB1ks0wsLAFQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-xs font-bold tracking-widest text-primary uppercase mb-2 block">Architecture</span>
+<h4 class="text-2xl font-bold text-white">Skyline Estates</h4>
+</div>
+</div>
+</div>
+<!-- Healthcare -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container mb-8">
+<img alt="Healthcare Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract macro shot of futuristic medical technology glowing with blue clinical light in a clean environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSvaLjsPihvMGZ3S7I3G3ysacloZT_IvZE5qmR0Zqz5VJuxaWa6Fot6olPJN3nn3Jl44oauzWADoDbNQUPpx-Yl-Wc1fJsozj5yyM3aPnNT6NKx9AG2m8JKuHAr5vJwa6S-g4fCJpA2nov1jXa58OCUvZ0YH2Ro39xn-s7qc8t6PCi9esCHQPWPuBuLutObc_Kl18I-jRVkxlIVoVPQMQZUEXektVvwQX_qkq40qgjm_0uWCYq3yebEGMPzHe4oiKMhZJkO-o1beo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-xs font-bold tracking-widest text-primary uppercase mb-2 block">BioTech</span>
+<h4 class="text-2xl font-bold text-white">Nova Health</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-6 block">Voices</span>
+<h2 class="font-headline text-5xl font-bold text-white mb-12">What our partners say about the ROOK experience.</h2>
+</div>
+<div class="bg-surface-container-low p-12 rounded-xl relative">
+<div class="absolute -top-6 -left-6 bg-primary-container p-4 rounded-lg">
+<span class="material-symbols-outlined text-white text-4xl">format_quote</span>
+</div>
+<p class="text-2xl text-on-surface leading-relaxed mb-12 font-light italic">
+                        "ROOK didn't just build a website; they constructed a digital fortress for our brand. The conversion rate increase was almost immediate."
+                    </p>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Client" class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged male executive with a confident expression in a sharp suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vTSROZfGQ1TzFHWm3vIZZSuUdmesMywaiXQLzaeGsbTr1hZeHEeJopdBP2Jh-srIYE0mqNnttuQju9o5OAwb3J7sXJHfOgjeMKITDuXwdVr9JfkGo4RAhk_uPTgbOmPVIMHDlEmSsWhmlgKlbM4koibyJkUt2brJWExIQ2zfapedTmcOW5u2OIKhw6m5s02wmtcoEc8mnzGlU7SK9yIztSMnBll5s2fkCEFko2izC-fMavBNJRH8tyrVj_y9NYVrDZoF2hrOLA0"/>
+</div>
+<div>
+<div class="text-white font-bold">Marcus Thorne</div>
+<div class="text-on-surface-variant text-sm">CEO, Thorne Digital</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-48 px-12 bg-surface relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary-container/10 blur-[150px] rounded-full"></div>
+</div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-headline text-6xl md:text-8xl font-bold text-white tracking-tighter mb-12">Let's Build Your Future</h2>
+<p class="text-xl text-on-surface-variant mb-16 max-w-2xl mx-auto">
+                Ready to elevate your digital presence to an architectural masterpiece? Our team is waiting to start the blueprint.
+            </p>
+<button class="bg-white text-black font-extrabold px-12 py-6 rounded-lg text-xl hover:bg-primary-container hover:text-white transition-all shadow-[0_0_60px_rgba(255,255,255,0.1)]">
+                Start A Project
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] dark:bg-[#0E0E0E] w-full py-24 px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-white font-['Inter']">ROOK</div>
+<p class="text-[#3A3939] text-sm leading-relaxed max-w-xs font-['Inter']">
+                    Architectural precision. Digital innovation. We create high-performance web ecosystems for the bold.
+                </p>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold uppercase tracking-widest text-xs">Navigation</h5>
+<ul class="space-y-4 font-['Inter'] text-sm tracking-wide">
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Work</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Studio</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Journal</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold uppercase tracking-widest text-xs">Connect</h5>
+<ul class="space-y-4 font-['Inter'] text-sm tracking-wide">
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Instagram</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">LinkedIn</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Behance</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold uppercase tracking-widest text-xs">Legal</h5>
+<ul class="space-y-4 font-['Inter'] text-sm tracking-wide">
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-[#3A3939] hover:text-white transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1920px] mx-auto mt-24 pt-12 border-t border-surface-container-high">
+<p class="text-[#3A3939] font-['Inter'] text-sm tracking-wide">
+                © 2024 ROOK Digital Architecture. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

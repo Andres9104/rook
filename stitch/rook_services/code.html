@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1b",
+                        "primary-container": "#0047ff",
+                        "background": "#131313",
+                        "primary": "#b9c3ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#001257",
+                        "tertiary": "#ffb4a2",
+                        "inverse-primary": "#0046fa",
+                        "on-secondary-fixed-variant": "#2d3f93",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed": "#dde1ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#8a1c00",
+                        "surface-container": "#201f1f",
+                        "on-secondary": "#11277b",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#0033c0",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "outline": "#8e8fa3",
+                        "on-secondary-container": "#a2b1ff",
+                        "tertiary-fixed": "#ffdad2",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#d4d9ff",
+                        "tertiary-container": "#b82800",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b9c3ff",
+                        "secondary-container": "#2d3f93",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#dde1ff",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffb4a2",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#434657",
+                        "on-tertiary": "#621100",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#c4c5da",
+                        "on-secondary-fixed": "#001257",
+                        "on-tertiary-fixed": "#3d0700",
+                        "on-primary": "#00228a",
+                        "primary-fixed-dim": "#b9c3ff",
+                        "secondary": "#b9c3ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#ffd1c6",
+                        "secondary-fixed-dim": "#b9c3ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#131313]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-white">ROOK</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Work</a>
+<a class="text-white border-b-2 border-[#0047FF] pb-1" href="#">Studio</a>
+<a class="text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Journal</a>
+<a class="text-[#3A3939] dark:text-[#E5E2E1] hover:text-[#0047FF] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold px-6 py-2 rounded-lg scale-95 active:duration-100 transition-all hover:brightness-110">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-12 mb-32 max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-end">
+<div class="space-y-8">
+<span class="text-primary font-medium tracking-[0.2em] uppercase text-sm">Services</span>
+<h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter text-white">Architecting Digital <span class="text-primary">Performance.</span></h1>
+</div>
+<div class="max-w-md pb-4">
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        We don't just build websites; we design digital structures that drive measurable growth. Our approach combines architectural precision with high-energy digital strategy.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Core Services Breakdown (Asymmetric Grid) -->
+<section class="px-12 mb-48 max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Website Design -->
+<div class="md:col-span-7 bg-surface-container-low p-12 flex flex-col justify-between min-h-[450px]">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="architecture">architecture</span>
+<h2 class="text-4xl font-bold text-white tracking-tight">Website Design</h2>
+<p class="text-on-surface-variant max-w-md text-lg">
+                            We create the "blueprint" for your brand. This isn't just about looking pretty—it's about intentional layouts that guide your visitors exactly where you want them to go.
+                        </p>
+</div>
+<div class="mt-8 flex gap-4 flex-wrap">
+<span class="bg-surface-container-high px-4 py-1 text-xs font-mono text-outline uppercase tracking-wider">Visual Identity</span>
+<span class="bg-surface-container-high px-4 py-1 text-xs font-mono text-outline uppercase tracking-wider">UX Architecture</span>
+<span class="bg-surface-container-high px-4 py-1 text-xs font-mono text-outline uppercase tracking-wider">Wireframing</span>
+</div>
+</div>
+<!-- Website Development -->
+<div class="md:col-span-5 bg-surface-container-high p-12 flex flex-col justify-between min-h-[450px]">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="code">code</span>
+<h2 class="text-4xl font-bold text-white tracking-tight">Website Development</h2>
+<p class="text-on-surface-variant text-lg">
+                            The engine under the hood. We build fast, secure, and reliable websites that work perfectly on every screen size. No tech headaches, just results.
+                        </p>
+</div>
+<div class="mt-8 flex gap-4 flex-wrap">
+<span class="bg-surface-container px-4 py-1 text-xs font-mono text-outline uppercase tracking-wider">Fast Loading</span>
+<span class="bg-surface-container px-4 py-1 text-xs font-mono text-outline uppercase tracking-wider">Mobile First</span>
+</div>
+</div>
+<!-- Website Redesign -->
+<div class="md:col-span-12 bg-primary-container/10 p-12 border-l-4 border-primary-container flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="auto_fix_high">auto_fix_high</span>
+<h2 class="text-4xl font-bold text-white tracking-tight mb-4">Website Redesign</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                            Is your current site holding you back? We renovate your digital presence, keeping what works and rebuilding what doesn't to modern standards of speed and conversion.
+                        </p>
+</div>
+<div class="md:w-1/2 overflow-hidden rounded-lg">
+<img alt="Digital Interface Design" class="w-full h-64 object-cover opacity-80" data-alt="Modern minimalist user interface design displayed on multiple screens with vibrant blue accents and clean structural layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7-c1T8cdlyQRYhlEz101M2OLevfcR2Pd95bp4dqTpTj54J_JYWUYrGpwliuqTIqWWh-YuHI7a4pe2E7uI-QRWqscGI5y4tvmw_r8M_uuOIplw1u4eVdYl5-GyvZLy879jNC2LC8r0U0CD2v7B9_jylbnDnQT7G0M1AM-3SzPKiwQqCeCACepsFdRdrvOQVlCzO88pJXTp32z1bqybd-JmQElFbeOa2P33E6D6xfx8EcS-rkucF2HnN0spYcEApuCxdF3eD3EUXuQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Tiers (Results Focused) -->
+<section class="bg-surface-container-lowest py-32 px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="text-center mb-24 space-y-6">
+<h2 class="text-5xl font-bold text-white tracking-tighter">Strategic Tiers</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Choose the foundation that matches your business stage. Every tier is built for maximum credibility.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Starter -->
+<div class="bg-surface p-12 flex flex-col justify-between group hover:bg-surface-container transition-all duration-500">
+<div class="space-y-8">
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
+<p class="text-primary text-3xl font-bold tracking-tighter">Essential Impact</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Modern 5-page Architecture</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Mobile Optimized Layout</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Basic SEO Foundation</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<span class="text-xs uppercase tracking-widest text-outline">Primary Result</span>
+<p class="text-xl font-bold text-white mt-2">Instant Credibility</p>
+</div>
+</div>
+<button class="mt-12 w-full py-4 border border-outline-variant hover:border-primary transition-colors text-white font-medium">Inquire Now</button>
+</div>
+<!-- Growth (Featured) -->
+<div class="bg-surface-container-high p-12 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-on-primary-fixed px-6 py-1 font-bold text-xs uppercase tracking-widest">Most Popular</div>
+<div class="space-y-8">
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">Growth</h3>
+<p class="text-primary text-3xl font-bold tracking-tighter">Conversion Focused</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Unlimited Strategic Pages</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Advanced Performance Tuning</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Integrated Marketing Tools</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Custom Content Management</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<span class="text-xs uppercase tracking-widest text-outline">Primary Result</span>
+<p class="text-xl font-bold text-white mt-2 text-primary">More Sales &amp; Leads</p>
+</div>
+</div>
+<button class="mt-12 w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold hover:brightness-110 transition-all">Select Growth</button>
+</div>
+<!-- Premium -->
+<div class="bg-surface p-12 flex flex-col justify-between group hover:bg-surface-container transition-all duration-500">
+<div class="space-y-8">
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+<p class="text-primary text-3xl font-bold tracking-tighter">Digital Dominance</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Bespoke 3D &amp; Interaction Design</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Premium E-commerce Systems</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<p class="text-on-surface">Priority Support &amp; Maintenance</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<span class="text-xs uppercase tracking-widest text-outline">Primary Result</span>
+<p class="text-xl font-bold text-white mt-2">Market Leadership</p>
+</div>
+</div>
+<button class="mt-12 w-full py-4 border border-outline-variant hover:border-primary transition-colors text-white font-medium">Custom Quote</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature "Perspective Mockup" Component -->
+<section class="py-48 px-12 overflow-hidden">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<!-- Glow behind -->
+<div class="absolute -inset-20 bg-primary/20 blur-[120px] rounded-full"></div>
+<!-- Mockup -->
+<div class="relative transform -rotate-6 scale-110 translate-x-12 shadow-2xl rounded-lg overflow-hidden border border-white/5">
+<img alt="Luxury Web Experience" class="w-full aspect-video object-cover" data-alt="A sleek laptop showing a dark, luxurious architecture website with bold white typography and a high-end editorial layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR0OFzBDl6wDK0pFuwpUhzJbtvkbVDB5wF88a_xA1yDk5tQNf-5Epef_kFAb3q72vsK6YFTY3cw7bMQw24cEJERoEOn45Q8b0mTGCNQ7lVdNtx-zXhk49Td7hDVZmGtjv51ZE1k7_euq0UUOzNffUeyBy4CnBqs0GXjIoHqKcn6ue2FVIEqUi-PnDp_Wk8-u-c84HydDaI57hp7zKrkJfvTg1N7U1Ae1Uc_GK4AdUWB9qqXZDpra3I7a1b00sf0K1IUGqdpJ5d35c"/>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="text-6xl font-bold text-white tracking-tighter leading-tight">We build for <span class="text-primary italic font-light">the future</span> of the web.</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                        Every line of code we write and every pixel we place is designed to scale with your business. We don't believe in temporary solutions—we build digital landmarks.
+                    </p>
+<div class="pt-8">
+<a class="inline-flex items-center gap-4 text-primary font-bold group" href="#">
+                            Explore our philosophy
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] dark:bg-[#0E0E0E] w-full py-24 px-12 font-['Inter'] text-sm tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-white">ROOK</div>
+<p class="text-[#3A3939] max-w-xs">High-end digital architecture for ambitious brands worldwide.</p>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-bold uppercase tracking-widest text-xs">Navigation</h4>
+<div class="flex flex-col gap-4 text-[#3A3939]">
+<a class="hover:text-white transition-all" href="#">Work</a>
+<a class="hover:text-white transition-all" href="#">Studio</a>
+<a class="hover:text-white transition-all text-white" href="#">Services</a>
+<a class="hover:text-white transition-all" href="#">Contact</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-bold uppercase tracking-widest text-xs">Social</h4>
+<div class="flex flex-col gap-4 text-[#3A3939]">
+<a class="hover:text-white transition-all" href="#">Instagram</a>
+<a class="hover:text-white transition-all" href="#">LinkedIn</a>
+<a class="hover:text-white transition-all" href="#">Behance</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-bold uppercase tracking-widest text-xs">Legal</h4>
+<div class="flex flex-col gap-4 text-[#3A3939]">
+<a class="hover:text-white transition-all" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1920px] mx-auto mt-24 pt-12 border-t border-surface-container-high flex justify-between items-center text-[#3A3939]">
+<p>© 2024 ROOK Digital Architecture. All rights reserved.</p>
+<div class="flex gap-8">
+<span>EST. 2024</span>
+<span>GLOBAL OPS</span>
+</div>
+</div>
+</footer>
+</body></html>
