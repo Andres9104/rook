@@ -279,63 +279,99 @@
 </section>
 
 <!-- ============ 4. BENEFICIOS / FEATURES ============ -->
-<section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
-  <div style="max-width:1200px;margin:0 auto;">
+<style>
+  .features-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d1b4b 40%, #1a0a3a 70%, #0a1a2e 100%);
+  }
+  .features-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,71,255,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .features-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(123,47,190,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .glass-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 36px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .glass-card:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.22);
+  }
+</style>
+<section class="features-section" style="padding:100px 48px;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
     <div style="text-align:center;margin-bottom:64px;">
-      <span class="section-label">Por qué ROOKS</span>
-      <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.0;margin-top:8px;">
+      <span style="display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px;">Por qué ROOKS</span>
+      <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;color:#fff;line-height:1.0;margin-top:8px;">
         Todo lo que necesitas,<br/><span class="gradient-text">nada de lo que no.</span>
       </h2>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
-      <div style="background:#EEF2FF;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#0047FF;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">bolt</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Entrega en 14 días</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Mientras tu competencia espera meses, tú ya estás en línea generando clientes. Sprints de alta intensidad, resultados reales.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">Entrega en 14 días</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">Mientras tu competencia espera meses, tú ya estás en línea generando clientes. Sprints de alta intensidad, resultados reales.</p>
       </div>
 
-      <div style="background:#F5EEFF;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#7B2FBE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">handshake</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Acceso directo al arquitecto</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Sin intermediarios ni gerentes de cuenta. Hablas directamente con quien construye tu proyecto, desde el día uno.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">Acceso directo al arquitecto</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">Sin intermediarios ni gerentes de cuenta. Hablas directamente con quien construye tu proyecto, desde el día uno.</p>
       </div>
 
-      <div style="background:#EDFAF5;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#00A878;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">trending_up</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Diseñado para convertir</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">No solo se ve bien — guía a tus visitantes exactamente donde quieres que vayan. Cada sección tiene un propósito estratégico.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">Diseñado para convertir</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">No solo se ve bien — guía a tus visitantes exactamente donde quieres que vayan. Cada sección tiene un propósito estratégico.</p>
       </div>
 
-      <div style="background:#FFF1EE;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#FF5733;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">devices</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">100% responsive</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Tu sitio se ve perfecto en celular, tablet y escritorio. Más del 60% de tus clientes te visitan desde el móvil.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">100% responsive</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">Tu sitio se ve perfecto en celular, tablet y escritorio. Más del 60% de tus clientes te visitan desde el móvil.</p>
       </div>
 
-      <div style="background:#EEF2FF;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#0047FF;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">search</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">SEO desde el inicio</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Construido para que Google te encuentre. Estructura semántica, velocidad optimizada y metadatos configurados desde el día uno.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">SEO desde el inicio</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">Construido para que Google te encuentre. Estructura semántica, velocidad optimizada y metadatos configurados desde el día uno.</p>
       </div>
 
-      <div style="background:#F5EEFF;border-radius:20px;padding:36px;">
+      <div class="glass-card">
         <div style="width:48px;height:48px;background:#7B2FBE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
           <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">support_agent</span>
         </div>
-        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Soporte post-lanzamiento</h3>
-        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">No te abandonamos en el lanzamiento. Incluimos soporte para ajustes y correcciones durante las primeras semanas.</p>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:10px;">Soporte post-lanzamiento</h3>
+        <p style="color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;font-size:0.95rem;">No te abandonamos en el lanzamiento. Incluimos soporte para ajustes y correcciones durante las primeras semanas.</p>
       </div>
 
     </div>
