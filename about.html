@@ -221,6 +221,47 @@
     border: 1px solid rgba(0,0,0,0.06);
     box-shadow: 0 2px 16px rgba(0,0,0,0.04);
   }
+
+  /* ===== MOBILE ===== */
+  @media(max-width:767px){
+    #mob-btn{display:flex!important;}
+    .md-nav{display:none!important;}
+    nav>div{padding:14px 20px!important;}
+
+    section{padding-left:20px!important;padding-right:20px!important;}
+    footer{padding:56px 20px!important;}
+
+    [style*="padding:160px"]{padding-top:110px!important;padding-bottom:56px!important;min-height:auto!important;}
+    [style*="padding:120px 48px"]{padding-top:72px!important;padding-bottom:72px!important;}
+    [style*="padding:100px 48px"]{padding-top:60px!important;padding-bottom:60px!important;}
+    [style*="padding:80px 48px"]{padding-top:48px!important;padding-bottom:48px!important;}
+    [style*="padding:0 48px 100px"]{padding-bottom:60px!important;}
+    [style*="padding:80px 48px 56px"]{padding-top:48px!important;padding-bottom:28px!important;}
+
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns:repeat(3,1fr)"],
+    [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+    [style*="grid-template-columns:2fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+
+    [style*="gap:80px"]{gap:28px!important;}
+    [style*="gap:96px"]{gap:40px!important;}
+    [style*="gap:64px"]{gap:24px!important;}
+
+    [style*="aspect-ratio:3/4"]{aspect-ratio:4/3!important;}
+    [style*="top:28px;left:12%"]{display:none!important;}
+
+    .btn-primary,.btn-secondary{display:block!important;text-align:center!important;box-sizing:border-box;}
+
+    [style*="padding:20px 48px"]{padding:14px 20px!important;}
+
+    [style*="max-width:1200px"],[style*="max-width:800px"],[style*="max-width:960px"],[style*="max-width:640px"]{
+      padding-left:0!important;padding-right:0!important;
+    }
+
+    .ticker-wrap{margin:0;}
+
+    [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important;}
+  }
 </style>
 </head>
 <body>
@@ -238,6 +279,14 @@
     </div>
   </div>
 </nav>
+<div id="mob-menu" style="display:none;position:fixed;top:65px;left:0;right:0;z-index:49;background:#FAFAF6;border-bottom:2px solid rgba(0,71,255,0.1);padding:12px 24px 24px;flex-direction:column;">
+  <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#1A1A2E;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:1.05rem;">Inicio</a>
+  <a href="portfolio.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#1A1A2E;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:1.05rem;">Portafolio</a>
+  <a href="services.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#1A1A2E;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:1.05rem;">Servicios</a>
+  <a href="about.html" style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#0047FF;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:1.05rem;">Nosotros</a>
+  <a href="contact.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#1A1A2E;text-decoration:none;padding:14px 0;font-size:1.05rem;">Contacto</a>
+<a href="contact.html" style="margin-top:20px;display:block;text-align:center;background:linear-gradient(135deg,#0047FF,#7B2FBE);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:15px;border-radius:12px;text-decoration:none;font-size:1rem;">Hablemos &rarr;</a>
+</div>
 
 <!-- Inline responsive nav fix -->
 <style>
