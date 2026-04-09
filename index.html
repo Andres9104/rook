@@ -112,10 +112,14 @@
 
     [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important;}
 
-    /* Centrado general en mobile */
-    main h1, main h2, main h3,
-    main p, main .section-label,
-    main .badge, main span.section-label {
+    /* Tipografía mobile */
+    main h1, main h2, main h3 {
+      text-align: center !important;
+    }
+    main p {
+      text-align: justify !important;
+    }
+    main .section-label, main .badge, main span.section-label {
       text-align: center !important;
     }
     main [style*="display:flex;flex-direction:column;gap:16px"],
