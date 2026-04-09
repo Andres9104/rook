@@ -139,15 +139,41 @@
 </header>
 
 <!-- ============ 2. LOGOS / SOCIAL PROOF ============ -->
-<section style="padding:48px;background:#fff;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">
-  <div style="max-width:1200px;margin:0 auto;">
-    <p style="text-align:center;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#B0B0C0;margin-bottom:32px;">Marcas que confían en ROOKS</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:48px;opacity:0.55;filter:grayscale(1);">
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Vanguard</span>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Aura Health</span>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">KRONOS</span>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Skyline</span>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Nova</span>
+<style>
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 18s linear infinite;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-wrap {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+</style>
+<section style="padding:48px 0;background:#fff;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">
+  <p style="text-align:center;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#B0B0C0;margin-bottom:32px;">Marcas que confían en ROOKS</p>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <!-- set 1 -->
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Vanguard</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Aura Health</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">KRONOS</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Skyline</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Nova</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">The Linear</span>
+      <!-- set 2 (duplicado para loop sin corte) -->
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Vanguard</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Aura Health</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">KRONOS</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Skyline</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">Nova</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;opacity:0.45;padding:0 56px;">The Linear</span>
     </div>
   </div>
 </section>
