@@ -3,15 +3,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ROOKS | Arquitectura Digital</title>
+<title>ROOKS | Tu Sitio Web en 14 Días</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    display: inline-block; vertical-align: middle;
-  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display:inline-block; vertical-align:middle; }
   body { font-family: 'Inter', sans-serif; background-color: #FAFAF6; color: #1A1A2E; }
   h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
 
@@ -24,15 +21,14 @@
     background: linear-gradient(135deg, #0047FF 0%, #7B2FBE 100%);
     color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
     padding: 16px 36px; border-radius: 100px; font-size: 1rem;
-    transition: all 0.3s ease; text-decoration: none;
-    
+    transition: filter 0.25s ease; text-decoration: none; border: none; cursor: pointer;
   }
-  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-primary:hover { filter: brightness(1.1); }
   .btn-secondary {
     display: inline-block; background: #fff; color: #0047FF;
     font-family: 'Space Grotesk', sans-serif; font-weight: 700;
     padding: 14px 34px; border-radius: 100px; font-size: 1rem;
-    border: 2px solid #0047FF; transition: all 0.3s ease; text-decoration: none;
+    border: 2px solid #0047FF; transition: all 0.25s ease; text-decoration: none;
   }
   .btn-secondary:hover { background: #0047FF; color: #fff; }
   .btn-ghost {
@@ -54,310 +50,542 @@
     background: linear-gradient(135deg, #0047FF 0%, #7B2FBE 100%);
     position: relative; overflow: hidden;
   }
-  .mid-cta-bg::before {
-    content: ''; position: absolute; top: -50%; right: -10%;
-    width: 500px; height: 500px; background: rgba(255,255,255,0.05); border-radius: 50%;
+  .section-label {
+    display: block; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #0047FF; margin-bottom: 12px;
   }
-  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-  .float-anim { animation: float 4s ease-in-out infinite; }
-  .card-hover { transition: all 0.35s ease; }
-  .card-hover:hover { transform: translateY(-4px); }
-  .perspective-card {
-    transform: perspective(1000px) rotateY(-8deg) rotateX(3deg);
-    transition: transform 0.5s ease;
+  .step-num {
+    font-family: 'Space Grotesk', sans-serif; font-size: 3.5rem;
+    font-weight: 800; letter-spacing: -0.04em; line-height: 1;
+    background: linear-gradient(135deg, #0047FF 0%, #7B2FBE 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .perspective-card:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+  .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 24px 0;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 1.05rem; color: #1A1A2E;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::after { content: '+'; font-size: 1.5rem; color: #0047FF; line-height: 1; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { color: #6B6B7A; font-weight: 300; line-height: 1.75; padding-bottom: 24px; }
+  @media(min-width:768px){.md-nav{display:flex!important;}}
 </style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav style="position:fixed;top:0;width:100%;z-index:50;background:rgba(250,250,246,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);">
+<!-- ============ NAV ============ -->
+<nav style="position:fixed;top:0;width:100%;z-index:50;background:rgba(250,250,246,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);">
   <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 48px;max-width:1920px;margin:0 auto;">
     <a href="index.html" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.04em;color:#0047FF;text-decoration:none;">ROOKS</a>
     <div style="display:none;gap:40px;" class="md-nav">
-      <a href="portfolio.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Trabajo</a>
-      <a href="services.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Estudio</a>
-      <a href="about.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Diario</a>
-      <a href="contact.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Contacto</a>
+      <a href="portfolio.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Trabajo</a>
+      <a href="services.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Servicios</a>
+      <a href="about.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Nosotros</a>
+      <a href="contact.html" style="font-family:'Space Grotesk',sans-serif;font-weight:500;color:#4A4A5A;text-decoration:none;" onmouseover="this.style.color='#0047FF'" onmouseout="this.style.color='#4A4A5A'">Contacto</a>
     </div>
-    <a href="contact.html" class="btn-primary" style="padding:12px 28px;font-size:0.9rem;">Comenzar</a>
+    <a href="contact.html" class="btn-primary" style="padding:12px 28px;font-size:0.9rem;">Agenda tu llamada gratis</a>
   </div>
 </nav>
-<style>@media(min-width:768px){.md-nav{display:flex!important;}}</style>
 
 <main>
 
-  <!-- HERO -->
-  <header style="position:relative;padding:160px 48px 100px;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
-    <!-- Blobs -->
-    <div style="position:absolute;top:10%;right:-5%;width:600px;height:600px;background:rgba(0,71,255,0.06);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
-    <div style="position:absolute;bottom:10%;right:15%;width:400px;height:400px;background:rgba(123,47,190,0.07);border-radius:50%;filter:blur(80px);pointer-events:none;"></div>
+<!-- ============ 1. HERO ============ -->
+<header style="position:relative;padding:160px 48px 100px;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
+  <div style="position:absolute;top:10%;right:-5%;width:600px;height:600px;background:rgba(0,71,255,0.05);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:10%;right:15%;width:350px;height:350px;background:rgba(123,47,190,0.05);border-radius:50%;filter:blur(80px);pointer-events:none;"></div>
 
-    <div style="max-width:1920px;margin:0 auto;width:100%;position:relative;z-index:1;">
-      <span class="badge" style="margin-bottom:32px;">Arquitectura Digital de Élite</span>
-      <h1 style="font-size:clamp(3.5rem,10vw,9rem);font-weight:800;letter-spacing:-0.04em;line-height:0.88;margin-bottom:32px;color:#1A1A2E;max-width:1100px;">
-        Construimos <span class="gradient-text">Arquitecturas Digitales</span> Que Convierten
-      </h1>
-      <p style="font-size:clamp(1.1rem,2vw,1.4rem);color:#6B6B7A;font-weight:300;line-height:1.7;max-width:640px;margin-bottom:48px;">
-        Diseño web innovador para negocios con visión de futuro. Fusionamos precisión arquitectónica con alma digital para fundadores que no se conforman.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:80px;">
-        <a href="contact.html" class="btn-primary" style="font-size:1.1rem;padding:18px 44px;">Obtén tu sitio web &rarr;</a>
-        <a href="portfolio.html" class="btn-ghost">Ver nuestro trabajo <span style="font-size:1.2rem;">&#8599;</span></a>
-      </div>
+  <div style="max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;">
+    <span class="badge" style="margin-bottom:28px;">+50 proyectos entregados · Entrega en 14 días</span>
 
-      <!-- Trust row -->
-      <div style="display:flex;flex-wrap:wrap;gap:32px;color:#6B6B7A;font-size:0.85rem;align-items:center;">
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Consulta inicial gratuita</span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Entrega en 14 días</span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Resultados garantizados</span>
-      </div>
+    <!-- Headline -->
+    <h1 style="font-size:clamp(3rem,9vw,8rem);font-weight:800;letter-spacing:-0.04em;line-height:0.9;margin-bottom:28px;color:#1A1A2E;">
+      Tu sitio web<br/><span class="gradient-text">profesional, listo<br/>en 14 días.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p style="font-size:clamp(1.1rem,2vw,1.35rem);color:#6B6B7A;font-weight:300;line-height:1.75;max-width:600px;margin-bottom:40px;">
+      Diseñamos y desarrollamos sitios web de alto impacto para fundadores y pequeños equipos que necesitan resultados reales — no promesas.
+    </p>
+
+    <!-- CTAs -->
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:56px;">
+      <a href="contact.html" class="btn-primary" style="font-size:1.1rem;padding:18px 44px;">Quiero mi sitio web &rarr;</a>
+      <a href="portfolio.html" class="btn-ghost">Ver proyectos reales &#8599;</a>
     </div>
-  </header>
 
-  <!-- VENTAJA ROOK -->
-  <section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
-    <div style="max-width:1920px;margin:0 auto;">
-      <div style="margin-bottom:56px;">
-        <span style="display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px;">Por qué elegirnos</span>
-        <h2 style="font-size:clamp(2.5rem,5vw,5rem);font-weight:800;letter-spacing:-0.04em;line-height:0.95;color:#1A1A2E;">La Ventaja <span class="gradient-text">ROOKS</span></h2>
+    <!-- Micro-prueba social -->
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;">
+      <div style="display:flex;align-items:center;gap:-8px;">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face" style="width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;" alt=""/>
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=48&h=48&fit=crop&crop=face" style="width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-10px;" alt=""/>
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=48&h=48&fit=crop&crop=face" style="width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-10px;" alt=""/>
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=48&h=48&fit=crop&crop=face" style="width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-10px;" alt=""/>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-
-        <div class="card-hover" style="background:#EEF2FF;border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-          <div style="width:48px;height:48px;background:#0047FF;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">bolt</span>
-          </div>
-          <h3 style="font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;color:#1A1A2E;">Velocidad</h3>
-          <p style="color:#4A4A6A;line-height:1.7;font-weight:300;">Optimizamos cada milisegundo para que tus usuarios nunca esperen. Sitios ultrarrápidos que retienen visitantes.</p>
-        </div>
-
-        <div class="card-hover" style="background:#FFF1EE;border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-          <div style="width:48px;height:48px;background:#FF5733;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">architecture</span>
-          </div>
-          <h3 style="font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;color:#1A1A2E;">Diseño Moderno</h3>
-          <p style="color:#4A4A6A;line-height:1.7;font-weight:300;">Estética de vanguardia que define los estándares de la industria. No seguimos tendencias; las establecemos.</p>
-        </div>
-
-        <div class="card-hover" style="background:#EDFAF5;border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-          <div style="width:48px;height:48px;background:#00A878;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">trending_up</span>
-          </div>
-          <h3 style="font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;color:#1A1A2E;">Conversión</h3>
-          <p style="color:#4A4A6A;line-height:1.7;font-weight:300;">Arquitectura UX estratégica diseñada para guiar a los usuarios hacia la acción. Tus metas son nuestro plano.</p>
-        </div>
-
-      </div>
-      <div style="text-align:center;margin-top:56px;">
-        <a href="services.html" class="btn-secondary">Ver todos los servicios</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS OVERVIEW -->
-  <section style="padding:100px 48px;background:#FAFAF6;">
-    <div style="max-width:1920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
-        <span style="display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px;">Lo que hacemos</span>
-        <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:48px;color:#1A1A2E;line-height:1.05;">Servicios Digitales de <span class="gradient-text">Precisión</span></h2>
-        <div style="display:flex;flex-direction:column;gap:36px;">
-
-          <div style="display:flex;gap:24px;align-items:flex-start;padding-bottom:36px;border-bottom:1px solid rgba(0,0,0,0.07);">
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:#0047FF;flex-shrink:0;width:40px;">01</div>
-            <div>
-              <h4 style="font-size:1.25rem;font-weight:700;color:#1A1A2E;margin-bottom:8px;">Estrategia UI/UX</h4>
-              <p style="color:#6B6B7A;line-height:1.7;font-weight:300;">Investigación profunda y mapeo de flujos de usuario para asegurar navegación intuitiva y alto engagement.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:24px;align-items:flex-start;padding-bottom:36px;border-bottom:1px solid rgba(0,0,0,0.07);">
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:#FF5733;flex-shrink:0;width:40px;">02</div>
-            <div>
-              <h4 style="font-size:1.25rem;font-weight:700;color:#1A1A2E;margin-bottom:8px;">Identidad de Marca</h4>
-              <p style="color:#6B6B7A;line-height:1.7;font-weight:300;">Definiendo tu persona digital a través de tipografía de alto contraste, ciencia del color y narración visual.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:24px;align-items:flex-start;">
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:#7B2FBE;flex-shrink:0;width:40px;">03</div>
-            <div>
-              <h4 style="font-size:1.25rem;font-weight:700;color:#1A1A2E;margin-bottom:8px;">Ingeniería Web</h4>
-              <p style="color:#6B6B7A;line-height:1.7;font-weight:300;">Arquitecturas robustas y escalables usando los últimos stacks tecnológicos para máximo rendimiento.</p>
-            </div>
-          </div>
-
+        <div style="display:flex;gap:2px;margin-bottom:4px;">
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
         </div>
-        <div style="margin-top:48px;">
-          <a href="services.html" class="btn-primary">Explorar servicios &rarr;</a>
-        </div>
-      </div>
-
-      <div style="position:relative;">
-        <div style="position:absolute;top:-24px;right:-24px;width:200px;height:200px;background:rgba(0,71,255,0.06);border-radius:50%;filter:blur(60px);"></div>
-        <div class="perspective-card" style="background:#F0EFF9;border-radius:24px;overflow:hidden;box-shadow:0 40px 80px rgba(0,71,255,0.10);">
-          <img alt="Visualización de Arquitectura Digital" style="width:100%;aspect-ratio:1/1;object-fit:cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALZUT6WlwVz3S2ffeWr7-gnFy2JvHBIhEF83I6zrQeMqq9JcONKzGjlW-DdagoWZ9LPqEzmyKwjJRjltdOAV2UQTDXI9TGuY97rzyi4QVVXCyCGe2D_rf1HIMpPhGZF_lv5zu6WfcuS3TuSciHtSxRcy0WXmSuYAoTs_uhe0hrrYVf0fvrfL8Devb607YY3f7rmeuDkQ5EIPkYkbgT8-iTdW8j6603Dl_lpQZ__AwKqnY6ksMb34eLN-WK7q6nETe-1fZ8nsDkuFs"/>
-        </div>
-        <!-- Floating badge -->
-        <div class="float-anim" style="position:absolute;bottom:32px;left:-24px;z-index:2;background:#fff;border-radius:16px;padding:16px 24px;box-shadow:0 20px 60px rgba(0,0,0,0.12);display:flex;align-items:center;gap:12px;">
-          <div style="width:40px;height:40px;background:linear-gradient(135deg,#00A878,#0047FF);border-radius:10px;display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:#fff;font-size:1.2rem;">trending_up</span>
-          </div>
-          <div>
-            <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.9rem;color:#1A1A2E;">+3x ROI promedio</p>
-            <p style="font-size:0.75rem;color:#6B6B7A;">Reportado por clientes</p>
-          </div>
-        </div>
+        <p style="font-size:0.85rem;color:#6B6B7A;font-weight:400;"><strong style="color:#1A1A2E;">5.0</strong> · Valorado por +50 fundadores</p>
       </div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- MID CTA -->
-  <section class="mid-cta-bg" style="padding:80px 48px;">
-    <div style="max-width:1920px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px;position:relative;z-index:1;">
-      <div>
-        <p style="font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;">Comienza hoy — sin costo</p>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;color:#fff;line-height:1.1;">¿Listo para tener un sitio<br/>que realmente convierta?</h3>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;">
-        <a href="contact.html" style="display:inline-block;background:#fff;color:#0047FF;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:16px 36px;border-radius:100px;font-size:1rem;text-decoration:none;">Agenda llamada gratis &rarr;</a>
-        <a href="portfolio.html" style="display:inline-block;background:rgba(255,255,255,0.12);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:16px 36px;border-radius:100px;font-size:1rem;border:1px solid rgba(255,255,255,0.25);text-decoration:none;">Ver portafolio</a>
-      </div>
+<!-- ============ 2. LOGOS / SOCIAL PROOF ============ -->
+<section style="padding:48px;background:#fff;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p style="text-align:center;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#B0B0C0;margin-bottom:32px;">Marcas que confían en ROOKS</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:48px;opacity:0.55;filter:grayscale(1);">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Vanguard</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Aura Health</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">KRONOS</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Skyline</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.03em;color:#1A1A2E;">Nova</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PORTAFOLIO PREVIEW -->
-  <section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
-    <div style="max-width:1920px;margin:0 auto;">
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;">
-        <div>
-          <span style="display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px;">Proyectos recientes</span>
-          <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.05;">Construcciones Recientes</h2>
-          <p style="color:#6B6B7A;margin-top:12px;max-width:520px;line-height:1.7;">Una selección de nuestros últimos avances digitales arquitectónicos en industrias de alto impacto.</p>
-        </div>
-        <a href="portfolio.html" class="btn-secondary">Ver portafolio completo</a>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-
-        <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;group;" onmouseover="this.querySelector('img').style.transform='scale(1.08)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
-          <img alt="Proyecto E-commerce" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVcPwalGP6J2A-Tqy6uSY5JYxVvcaU4Wi4cyl-hk0_Q0dTltlcN9-G1QnGs7y5lwis8zlaOy8NbZOgmBiQzoBkySudv-2PCYCDPROJiue88ccUFMB75mD_2p0lYpDQPCcewg66Rx_G00nJDdMxT0F5MYozBsdes6UUeLTnxXFd7VGCCqH7D8qDA4O5C-B483QqhbedJJg3-wzZi6ANv0DW0fI9DVrk5e6jTZE5NelgF0fHQhZi0goXIXCFM5M8LC0ujLOdWxo6HHQ"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 50%);"></div>
-          <div style="position:absolute;bottom:28px;left:28px;">
-            <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:6px;">Retail</span>
-            <h4 style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Veloce Luxury</h4>
-          </div>
-        </div>
-
-        <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;" onmouseover="this.querySelector('img').style.transform='scale(1.08)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
-          <img alt="Proyecto Bienes Raíces" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyqganErdJ5YzcVKw7YXXPoZgYEbZREDtkp1KvpOGabtTVUfTiosZ3m8v_zwX6cLlC4zJUr101LN-Kh9juM3EECi7veMiW_0lJ_zavQjeTQVBY8OCZyj_4WiELPsoLJwCGgpXo3OZETpM_mQUjtjiyKi9buIq8QDTvWrHySorFcr1UMoJ-OqfntvLw7i4ZkPsaqKYec6__vtQEcbuKvz60GfpEkolXrJIT5mzwKfOwxtJTsbHY_y_GV-Z9QM6U_zpB1ks0wsLAFQ"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 50%);"></div>
-          <div style="position:absolute;bottom:28px;left:28px;">
-            <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:6px;">Arquitectura</span>
-            <h4 style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Skyline Estates</h4>
-          </div>
-        </div>
-
-        <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;" onmouseover="this.querySelector('img').style.transform='scale(1.08)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
-          <img alt="Proyecto Salud" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSvaLjsPihvMGZ3S7I3G3ysacloZT_IvZE5qmR0Zqz5VJuxaWa6Fot6olPJN3nn3Jl44oauzWADoDbNQUPpx-Yl-Wc1fJsozj5yyM3aPnNT6NKx9AG2m8JKuHAr5vJwa6S-g4fCJpA2nov1jXa58OCUvZ0YH2Ro39xn-s7qc8t6PCi9esCHQPWPuBuLutObc_Kl18I-jRVkxlIVoVPQMQZUEXektVvwQX_qkq40qgjm_0uWCYq3yebEGMPzHe4oiKMhZJkO-o1beo"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 50%);"></div>
-          <div style="position:absolute;bottom:28px;left:28px;">
-            <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:6px;">BioTech</span>
-            <h4 style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Nova Health</h4>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIAL -->
-  <section style="padding:100px 48px;background:#FAFAF6;">
-    <div style="max-width:1920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-      <div>
-        <span style="display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:16px;">Testimonios</span>
-        <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.1;margin-bottom:32px;">Lo que dicen nuestros socios sobre la experiencia ROOKS.</h2>
-        <a href="contact.html" class="btn-primary">Únete a nuestros clientes &rarr;</a>
-      </div>
-
-      <div style="background:#fff;border-radius:24px;padding:48px;box-shadow:0 20px 60px rgba(0,0,0,0.07);position:relative;">
-        <div style="position:absolute;top:-20px;left:36px;width:48px;height:48px;background:linear-gradient(135deg,#0047FF,#7B2FBE);border-radius:14px;display:flex;align-items:center;justify-content:center;">
-          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;">format_quote</span>
-        </div>
-        <div style="display:flex;gap:4px;margin-bottom:24px;margin-top:8px;">
-          <span class="material-symbols-outlined" style="color:#FF9A3C;font-variation-settings:'FILL' 1;">star</span>
-          <span class="material-symbols-outlined" style="color:#FF9A3C;font-variation-settings:'FILL' 1;">star</span>
-          <span class="material-symbols-outlined" style="color:#FF9A3C;font-variation-settings:'FILL' 1;">star</span>
-          <span class="material-symbols-outlined" style="color:#FF9A3C;font-variation-settings:'FILL' 1;">star</span>
-          <span class="material-symbols-outlined" style="color:#FF9A3C;font-variation-settings:'FILL' 1;">star</span>
-        </div>
-        <p style="font-size:1.25rem;color:#1A1A2E;line-height:1.7;margin-bottom:32px;font-style:italic;font-weight:300;">
-          "ROOKS no solo construyó un sitio web; construyeron una fortaleza digital para nuestra marca. El aumento en la tasa de conversión fue casi inmediato."
-        </p>
-        <div style="display:flex;align-items:center;gap:16px;">
-          <div style="width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;">
-            <img alt="Cliente" style="width:100%;height:100%;object-fit:cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vTSROZfGQ1TzFHWm3vIZZSuUdmesMywaiXQLzaeGsbTr1hZeHEeJopdBP2Jh-srIYE0mqNnttuQju9o5OAwb3J7sXJHfOgjeMKITDuXwdVr9JfkGo4RAhk_uPTgbOmPVIMHDlEmSsWhmlgKlbM4koibyJkUt2brJWExIQ2zfapedTmcOW5u2OIKhw6m5s02wmtcoEc8mnzGlU7SK9yIztSMnBll5s2fkCEFko2izC-fMavBNJRH8tyrVj_y9NYVrDZoF2hrOLA0"/>
-          </div>
-          <div>
-            <p style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#1A1A2E;">Marcus Thorne</p>
-            <p style="font-size:0.85rem;color:#6B6B7A;">CEO, Thorne Digital</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section style="padding:120px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);text-align:center;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:20%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:rgba(0,71,255,0.04);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
-    <div style="position:relative;z-index:1;">
-      <span class="badge" style="margin-bottom:32px;">Empieza ahora</span>
-      <h2 style="font-size:clamp(3rem,9vw,8rem);font-weight:800;letter-spacing:-0.04em;line-height:0.88;margin-bottom:28px;color:#1A1A2E;">
-        Construyamos <span class="gradient-text">Tu Futuro</span>
+<!-- ============ 3. PROBLEMA ============ -->
+<section style="padding:100px 48px;background:#FAFAF6;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div>
+      <span class="section-label">El problema</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:#1A1A2E;margin-bottom:24px;">
+        Tu sitio web actual <span class="gradient-text">está costándote clientes.</span>
       </h2>
-      <p style="font-size:clamp(1.1rem,2vw,1.4rem);font-weight:300;color:#6B6B7A;margin-bottom:56px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.7;">
-        ¿Listo para elevar tu presencia digital a una obra maestra arquitectónica? Nuestro equipo está esperando para comenzar el plano.
+      <p style="color:#6B6B7A;font-size:1.05rem;font-weight:300;line-height:1.8;margin-bottom:32px;">
+        Un sitio lento, desactualizado o genérico no convierte. Los visitantes se van en segundos y tu competencia — con un sitio mejor — se lleva tus clientes.
       </p>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:40px;">
-        <a href="contact.html" class="btn-primary" style="font-size:1.15rem;padding:20px 48px;">Iniciar mi proyecto &rarr;</a>
-        <a href="about.html" class="btn-secondary" style="font-size:1.15rem;padding:18px 46px;">Conocer el estudio</a>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:32px;color:#6B6B7A;font-size:0.85rem;">
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Sin compromiso</span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Respuesta en 24h</span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="color:#00A878;font-size:1.1rem;">check_circle</span> Propuesta gratis</span>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#FFF1EE;border-radius:12px;border-left:3px solid #FF5733;">
+          <span class="material-symbols-outlined" style="color:#FF5733;font-size:1.2rem;font-variation-settings:'FILL' 1;">cancel</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">El 88% de los usuarios no regresa tras una mala experiencia web</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#FFF1EE;border-radius:12px;border-left:3px solid #FF5733;">
+          <span class="material-symbols-outlined" style="color:#FF5733;font-size:1.2rem;font-variation-settings:'FILL' 1;">cancel</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">Un sitio que carga en +3 segundos pierde el 53% de sus visitas</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#FFF1EE;border-radius:12px;border-left:3px solid #FF5733;">
+          <span class="material-symbols-outlined" style="color:#FF5733;font-size:1.2rem;font-variation-settings:'FILL' 1;">cancel</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">El 75% juzga la credibilidad de un negocio por su sitio web</span>
+        </div>
       </div>
     </div>
-  </section>
+    <div>
+      <span class="section-label">La solución</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:#1A1A2E;margin-bottom:24px;">
+        Un sitio que trabaja <span class="gradient-text">por ti, 24/7.</span>
+      </h2>
+      <p style="color:#6B6B7A;font-size:1.05rem;font-weight:300;line-height:1.8;margin-bottom:32px;">
+        En ROOKS diseñamos sitios que convierten visitantes en clientes. Rápidos, modernos y construidos para escalar con tu negocio.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#EDFAF5;border-radius:12px;border-left:3px solid #00A878;">
+          <span class="material-symbols-outlined" style="color:#00A878;font-size:1.2rem;font-variation-settings:'FILL' 1;">check_circle</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">Carga en menos de 2 segundos, en cualquier dispositivo</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#EDFAF5;border-radius:12px;border-left:3px solid #00A878;">
+          <span class="material-symbols-outlined" style="color:#00A878;font-size:1.2rem;font-variation-settings:'FILL' 1;">check_circle</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">Diseño que genera confianza y guía al usuario a la acción</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:#EDFAF5;border-radius:12px;border-left:3px solid #00A878;">
+          <span class="material-symbols-outlined" style="color:#00A878;font-size:1.2rem;font-variation-settings:'FILL' 1;">check_circle</span>
+          <span style="color:#4A4A6A;font-size:0.95rem;">Entregado en 14 días, con soporte incluido</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. BENEFICIOS / FEATURES ============ -->
+<section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">Por qué ROOKS</span>
+      <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.0;margin-top:8px;">
+        Todo lo que necesitas,<br/><span class="gradient-text">nada de lo que no.</span>
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div style="background:#EEF2FF;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#0047FF;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">bolt</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Entrega en 14 días</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Mientras tu competencia espera meses, tú ya estás en línea generando clientes. Sprints de alta intensidad, resultados reales.</p>
+      </div>
+
+      <div style="background:#F5EEFF;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#7B2FBE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">handshake</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Acceso directo al arquitecto</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Sin intermediarios ni gerentes de cuenta. Hablas directamente con quien construye tu proyecto, desde el día uno.</p>
+      </div>
+
+      <div style="background:#EDFAF5;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#00A878;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">trending_up</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Diseñado para convertir</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">No solo se ve bien — guía a tus visitantes exactamente donde quieres que vayan. Cada sección tiene un propósito estratégico.</p>
+      </div>
+
+      <div style="background:#FFF1EE;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#FF5733;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">devices</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">100% responsive</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Tu sitio se ve perfecto en celular, tablet y escritorio. Más del 60% de tus clientes te visitan desde el móvil.</p>
+      </div>
+
+      <div style="background:#EEF2FF;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#0047FF;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">search</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">SEO desde el inicio</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">Construido para que Google te encuentre. Estructura semántica, velocidad optimizada y metadatos configurados desde el día uno.</p>
+      </div>
+
+      <div style="background:#F5EEFF;border-radius:20px;padding:36px;">
+        <div style="width:48px;height:48px;background:#7B2FBE;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#fff;font-size:1.5rem;font-variation-settings:'FILL' 1;">support_agent</span>
+        </div>
+        <h3 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;color:#1A1A2E;margin-bottom:10px;">Soporte post-lanzamiento</h3>
+        <p style="color:#4A4A6A;font-weight:300;line-height:1.7;font-size:0.95rem;">No te abandonamos en el lanzamiento. Incluimos soporte para ajustes y correcciones durante las primeras semanas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROCESO ============ -->
+<section style="padding:100px 48px;background:#FAFAF6;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:72px;">
+      <span class="section-label">Cómo funciona</span>
+      <h2 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.0;margin-top:8px;">
+        De cero a publicado<br/><span class="gradient-text">en 4 pasos.</span>
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;">
+      <!-- Línea conectora -->
+      <div style="position:absolute;top:28px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,#0047FF,#7B2FBE);opacity:0.15;"></div>
+
+      <div style="text-align:center;position:relative;">
+        <div style="width:56px;height:56px;background:#fff;border:2px solid #0047FF;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:#0047FF;font-size:1.1rem;">01</span>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:800;color:#1A1A2E;margin-bottom:10px;">Llamada de descubrimiento</h3>
+        <p style="color:#6B6B7A;font-size:0.9rem;font-weight:300;line-height:1.7;">30 minutos para entender tu negocio, tus metas y tu cliente ideal. Sin costo.</p>
+      </div>
+
+      <div style="text-align:center;position:relative;">
+        <div style="width:56px;height:56px;background:#fff;border:2px solid #7B2FBE;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:#7B2FBE;font-size:1.1rem;">02</span>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:800;color:#1A1A2E;margin-bottom:10px;">Propuesta y diseño</h3>
+        <p style="color:#6B6B7A;font-size:0.9rem;font-weight:300;line-height:1.7;">Recibe una propuesta personalizada y prototipo visual en 48 horas para tu aprobación.</p>
+      </div>
+
+      <div style="text-align:center;position:relative;">
+        <div style="width:56px;height:56px;background:#fff;border:2px solid #FF5733;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:#FF5733;font-size:1.1rem;">03</span>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:800;color:#1A1A2E;margin-bottom:10px;">Desarrollo y revisión</h3>
+        <p style="color:#6B6B7A;font-size:0.9rem;font-weight:300;line-height:1.7;">Construimos tu sitio con dos rondas de revisión incluidas. Tú decides, nosotros ejecutamos.</p>
+      </div>
+
+      <div style="text-align:center;position:relative;">
+        <div style="width:56px;height:56px;background:#0047FF;border:2px solid #0047FF;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:#fff;font-size:1.1rem;">04</span>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:800;color:#1A1A2E;margin-bottom:10px;">Lanzamiento</h3>
+        <p style="color:#6B6B7A;font-size:0.9rem;font-weight:300;line-height:1.7;">Tu sitio en línea, con dominio, hosting y soporte post-lanzamiento incluido.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:56px;">
+      <a href="contact.html" class="btn-primary" style="font-size:1.05rem;padding:16px 40px;">Empezar ahora &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. PORTAFOLIO ============ -->
+<section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;">
+      <div>
+        <span class="section-label">Resultados reales</span>
+        <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;line-height:1.05;margin-top:8px;">Proyectos que<br/><span class="gradient-text">hablan por sí solos.</span></h2>
+      </div>
+      <a href="portfolio.html" class="btn-secondary">Ver portafolio completo</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;" onmouseover="this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
+        <img alt="Veloce Luxury" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&fit=crop"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,0.85) 0%,transparent 55%);"></div>
+        <div style="position:absolute;bottom:24px;left:24px;">
+          <span style="font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:4px;">Retail</span>
+          <h4 style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Veloce Luxury</h4>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:4px;">+180% conversiones</p>
+        </div>
+      </div>
+
+      <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;" onmouseover="this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
+        <img alt="Skyline Estates" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&fit=crop"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,0.85) 0%,transparent 55%);"></div>
+        <div style="position:absolute;bottom:24px;left:24px;">
+          <span style="font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:4px;">Bienes Raíces</span>
+          <h4 style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Skyline Estates</h4>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:4px;">+3x leads mensuales</p>
+        </div>
+      </div>
+
+      <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;" onmouseover="this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
+        <img alt="Aura Health" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&fit=crop"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,0.85) 0%,transparent 55%);"></div>
+        <div style="position:absolute;bottom:24px;left:24px;">
+          <span style="font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#b9c3ff;display:block;margin-bottom:4px;">Salud</span>
+          <h4 style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">Aura Health</h4>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:4px;">+95% satisfacción</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. TESTIMONIOS ============ -->
+<section style="padding:100px 48px;background:#FAFAF6;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">Testimonios</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;margin-top:8px;line-height:1.05;">
+        Lo que dicen quienes<br/><span class="gradient-text">ya dieron el salto.</span>
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div style="background:#fff;border-radius:20px;padding:36px;border:1px solid rgba(0,0,0,0.06);">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p style="color:#1A1A2E;font-size:1rem;line-height:1.75;margin-bottom:28px;font-style:italic;font-weight:300;">"ROOKS no solo construyó un sitio web — construyeron una fortaleza digital para nuestra marca. El aumento en conversiones fue casi inmediato."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=48&h=48&fit=crop&crop=face" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="Marcus"/>
+          <div>
+            <p style="font-weight:700;color:#1A1A2E;font-size:0.9rem;">Marcus Thorne</p>
+            <p style="font-size:0.8rem;color:#6B6B7A;">CEO, Thorne Digital</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#EEF2FF;border-radius:20px;padding:36px;border:1px solid rgba(0,71,255,0.08);">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p style="color:#1A1A2E;font-size:1rem;line-height:1.75;margin-bottom:28px;font-style:italic;font-weight:300;">"En 14 días tenía mi sitio listo y funcionando. Nunca pensé que sería tan rápido y con tan buen resultado. Triplicamos los leads en el primer mes."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=48&h=48&fit=crop&crop=face" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="Sofia"/>
+          <div>
+            <p style="font-weight:700;color:#1A1A2E;font-size:0.9rem;">Sofía Ramírez</p>
+            <p style="font-size:0.8rem;color:#6B6B7A;">Fundadora, Aura Health</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:36px;border:1px solid rgba(0,0,0,0.06);">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="color:#FF9A3C;font-size:1rem;font-variation-settings:'FILL' 1;">star</span>
+        </div>
+        <p style="color:#1A1A2E;font-size:1rem;line-height:1.75;margin-bottom:28px;font-style:italic;font-weight:300;">"La comunicación fue directa y clara desde el inicio. Lo que más valoré fue hablar con el mismo equipo que construyó el sitio, sin intermediarios."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="Diego"/>
+          <div>
+            <p style="font-weight:700;color:#1A1A2E;font-size:0.9rem;">Diego Vega</p>
+            <p style="font-size:0.8rem;color:#6B6B7A;">Director, Skyline Estates</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. PRECIOS ============ -->
+<section style="padding:100px 48px;background:#fff;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">Inversión</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;margin-top:8px;line-height:1.05;">
+        Elige tu nivel.<br/><span class="gradient-text">Todos incluyen soporte.</span>
+      </h2>
+      <p style="color:#6B6B7A;margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;font-weight:300;line-height:1.7;">Sin contratos largos. Sin sorpresas. Pago por entregable.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
+
+      <div style="background:#FAFAF6;border-radius:20px;padding:40px;border:1px solid rgba(0,0,0,0.07);">
+        <h3 style="font-size:1.2rem;font-weight:800;color:#1A1A2E;margin-bottom:6px;">Inicial</h3>
+        <p style="color:#0047FF;font-weight:800;font-size:1.3rem;margin-bottom:28px;">Impacto Esencial</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#0047FF;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">Hasta 5 páginas estratégicas</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#0047FF;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">Diseño mobile-first</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#0047FF;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">SEO básico</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#0047FF;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">2 rondas de revisión</span></div>
+        </div>
+        <a href="contact.html" class="btn-secondary" style="display:block;text-align:center;border-radius:12px;">Consultar precio</a>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#0047FF 0%,#7B2FBE 100%);border-radius:20px;padding:40px;position:relative;">
+        <div style="position:absolute;top:0;right:0;background:rgba(255,255,255,0.2);padding:8px 20px;border-radius:0 20px 0 12px;">
+          <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">Más popular</span>
+        </div>
+        <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">Crecimiento</h3>
+        <p style="color:rgba(255,255,255,0.75);font-weight:800;font-size:1.3rem;margin-bottom:28px;">Conversión Enfocada</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:rgba(255,255,255,0.9);font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;">Páginas ilimitadas</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:rgba(255,255,255,0.9);font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;">Optimización avanzada de rendimiento</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:rgba(255,255,255,0.9);font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;">Herramientas de marketing integradas</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:rgba(255,255,255,0.9);font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;">Gestión de contenido</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:rgba(255,255,255,0.9);font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;">SEO avanzado + Analytics</span></div>
+        </div>
+        <a href="contact.html" style="display:block;text-align:center;background:#fff;color:#0047FF;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:14px 24px;border-radius:12px;text-decoration:none;font-size:0.95rem;transition:filter 0.25s;" onmouseover="this.style.filter='brightness(0.95)'" onmouseout="this.style.filter='none'">Quiero este plan &rarr;</a>
+      </div>
+
+      <div style="background:#FAFAF6;border-radius:20px;padding:40px;border:1px solid rgba(0,0,0,0.07);">
+        <h3 style="font-size:1.2rem;font-weight:800;color:#1A1A2E;margin-bottom:6px;">Premium</h3>
+        <p style="color:#7B2FBE;font-weight:800;font-size:1.3rem;margin-bottom:28px;">Dominancia Digital</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#7B2FBE;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">Diseño 3D e interacciones a medida</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#7B2FBE;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">E-commerce premium</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#7B2FBE;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">Soporte y mantenimiento prioritario</span></div>
+          <div style="display:flex;gap:10px;"><span class="material-symbols-outlined" style="color:#7B2FBE;font-size:1.1rem;font-variation-settings:'FILL' 1;">check_circle</span><span style="color:#4A4A6A;font-size:0.9rem;font-weight:300;">Estrategia de conversión incluida</span></div>
+        </div>
+        <a href="contact.html" style="display:block;text-align:center;background:#7B2FBE;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:14px 24px;border-radius:12px;text-decoration:none;font-size:0.95rem;transition:filter 0.25s;" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'">Cotización personalizada</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;color:#6B6B7A;font-size:0.85rem;margin-top:28px;">¿No sabes cuál elegir? <a href="contact.html" style="color:#0047FF;font-weight:600;text-decoration:none;">Agenda una llamada gratis</a> y te orientamos sin compromiso.</p>
+  </div>
+</section>
+
+<!-- ============ 9. FAQ ============ -->
+<section style="padding:100px 48px;background:#FAFAF6;border-top:1px solid rgba(0,0,0,0.05);">
+  <div style="max-width:800px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.04em;color:#1A1A2E;margin-top:8px;">
+        Resolvemos tus<br/><span class="gradient-text">dudas antes de empezar.</span>
+      </h2>
+    </div>
+
+    <details class="faq-item">
+      <summary>¿Realmente pueden entregar en 14 días?</summary>
+      <p>Sí. Trabajamos en sprints de alta intensidad y tenemos un proceso probado. Los 14 días cuentan desde que apruebas el diseño inicial. La llamada de descubrimiento y propuesta ocurren antes de ese plazo.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Cuánto cuesta un sitio web con ROOKS?</summary>
+      <p>Depende del alcance y el nivel que elijas. Tenemos opciones desde proyectos esenciales hasta sitios premium con e-commerce. Agenda una llamada gratuita y te damos una propuesta personalizada sin compromiso.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué necesito tener listo para empezar?</summary>
+      <p>Solo necesitas una idea clara de tu negocio y tus metas. Nosotros nos encargamos del texto, el diseño, el desarrollo y el lanzamiento. Si ya tienes contenido o logo, mejor — lo usamos como base.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Puedo actualizar el sitio yo mismo después?</summary>
+      <p>Sí. En los planes Crecimiento y Premium incluimos un sistema de gestión de contenido sencillo para que puedas actualizar textos e imágenes sin saber programar.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué pasa si no quedo satisfecho con el resultado?</summary>
+      <p>Incluimos dos rondas de revisión en todos los planes para asegurarnos de que el resultado sea exactamente lo que necesitas. Si al final del proceso no estás conforme, lo resolvemos — tu satisfacción es nuestra prioridad.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Ofrecen mantenimiento después del lanzamiento?</summary>
+      <p>Sí. Incluimos soporte post-lanzamiento para correcciones durante las primeras semanas. Para mantenimiento continuo, tenemos planes mensuales disponibles según tus necesidades.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============ 10. CTA FINAL ============ -->
+<section class="mid-cta-bg" style="padding:120px 48px;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;position:relative;z-index:1;">
+    <span style="display:inline-block;background:rgba(255,255,255,0.15);color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:6px 20px;border-radius:100px;margin-bottom:28px;border:1px solid rgba(255,255,255,0.25);">Empieza hoy — sin costo</span>
+    <h2 style="font-size:clamp(2.5rem,7vw,6rem);font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:#fff;margin-bottom:24px;">
+      Tu próximo cliente<br/>te está buscando.
+    </h2>
+    <p style="font-size:1.2rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;">
+      Cada día sin un sitio profesional es un cliente que se va a la competencia. Cambia eso hoy.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:36px;">
+      <a href="contact.html" style="display:inline-block;background:#fff;color:#0047FF;font-family:'Space Grotesk',sans-serif;font-weight:800;padding:18px 44px;border-radius:100px;font-size:1.1rem;text-decoration:none;transition:filter 0.25s;" onmouseover="this.style.filter='brightness(0.95)'" onmouseout="this.style.filter='none'">Agenda tu llamada gratis &rarr;</a>
+      <a href="portfolio.html" style="display:inline-block;background:rgba(255,255,255,0.12);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;padding:18px 44px;border-radius:100px;font-size:1.1rem;border:1px solid rgba(255,255,255,0.3);text-decoration:none;transition:filter 0.25s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">Ver portafolio</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;color:rgba(255,255,255,0.65);font-size:0.85rem;">
+      <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1rem;color:rgba(255,255,255,0.8);font-variation-settings:'FILL' 1;">check_circle</span>Llamada gratis sin compromiso</span>
+      <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1rem;color:rgba(255,255,255,0.8);font-variation-settings:'FILL' 1;">check_circle</span>Respuesta en menos de 24h</span>
+      <span style="display:flex;align-items:center;gap:8px;"><span class="material-symbols-outlined" style="font-size:1rem;color:rgba(255,255,255,0.8);font-variation-settings:'FILL' 1;">check_circle</span>Propuesta personalizada gratis</span>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <!-- Footer -->
 <footer style="background:#1A1A2E;padding:96px 48px;">
-  <div style="max-width:1920px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:48px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;">
     <div>
       <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:16px;">ROOKS</h3>
-      <p style="color:#6B6B9A;font-size:0.9rem;line-height:1.7;max-width:260px;">Precisión arquitectónica. Innovación digital. Creamos ecosistemas web de alto rendimiento para los audaces.</p>
+      <p style="color:#6B6B9A;font-size:0.9rem;line-height:1.75;max-width:280px;">Precisión arquitectónica. Innovación digital. Sitios web que convierten para fundadores con visión.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <h4 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;">Navegación</h4>
+      <h4 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;">Páginas</h4>
       <a href="portfolio.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Trabajo</a>
-      <a href="services.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Estudio</a>
-      <a href="about.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Diario</a>
+      <a href="services.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Servicios</a>
+      <a href="about.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Nosotros</a>
       <a href="contact.html" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Contacto</a>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <h4 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;">Conectar</h4>
+      <h4 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;">Social</h4>
       <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Instagram</a>
       <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">LinkedIn</a>
       <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Behance</a>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
       <h4 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;">Legal</h4>
-      <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Política de Privacidad</a>
-      <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Términos de Servicio</a>
-      <p style="color:#3A3A5A;font-size:0.82rem;margin-top:16px;">© 2024 ROOKS Arquitectura Digital.<br/>Todos los derechos reservados.</p>
+      <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Privacidad</a>
+      <a href="#" style="color:#6B6B9A;font-size:0.9rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6B6B9A'">Términos</a>
+      <p style="color:#3A3A5A;font-size:0.82rem;margin-top:12px;">© 2024 ROOKS.<br/>Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
