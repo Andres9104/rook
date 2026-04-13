@@ -109,6 +109,7 @@
     --chat--color--primary-shade-100: #0033c0;
     --chat--toggle--background: #0047FF;
     --chat--toggle--hover--background: #0047FF;
+    --chat--toggle--active--background: #6B7280;
     --chat--toggle--size: 64px;
     --chat--border-radius: 12px;
     --chat--window--width: 350px;
@@ -116,6 +117,12 @@
     --chat--header--height: 56px;
     --chat--message--font-size: 0.875rem;
     --chat--input--font-size: 0.875rem;
+  }
+  .chat-window-toggle.chat-window-toggle--open,
+  .chat-window-toggle[aria-expanded="true"],
+  .chat-window-toggle.open {
+    background-color: #6B7280 !important;
+    background: #6B7280 !important;
   }
   .chat-inputs input:focus,
   .chat-inputs textarea:focus,
