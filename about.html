@@ -271,13 +271,19 @@
     --chat--color--primary-shade-100: #0033c0;
     --chat--toggle--background: #0047FF;
     --chat--toggle--hover--background: #7B2FBE;
-    --chat--toggle--size: 48px;
+    --chat--toggle--size: 54px;
     --chat--border-radius: 12px;
-    --chat--window--width: 320px;
-    --chat--window--height: 460px;
+    --chat--window--width: 350px;
+    --chat--window--height: 500px;
     --chat--header--height: 56px;
-    --chat--message--font-size: 0.85rem;
-    --chat--input--font-size: 0.85rem;
+    --chat--message--font-size: 0.875rem;
+    --chat--input--font-size: 0.875rem;
+  }
+  .chat-window-toggle svg { display: none !important; }
+  .chat-window-toggle::before {
+    content: '🤖';
+    font-size: 26px;
+    line-height: 1;
   }
 </style>
 </head>
