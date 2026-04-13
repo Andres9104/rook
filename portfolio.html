@@ -101,6 +101,18 @@
     [style*="grid-template-columns:1fr 1fr;gap:14px"]{grid-template-columns:1fr!important;}
   }
 </style>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  :root {
+    --chat--color--primary: #0047FF;
+    --chat--color--primary-shade-50: #003de0;
+    --chat--color--primary-shade-100: #0033c0;
+    --chat--toggle--background: #0047FF;
+    --chat--toggle--hover--background: #7B2FBE;
+    --chat--border-radius: 12px;
+    --chat--window--width: 380px;
+  }
+</style>
 </head>
 <body>
 
@@ -309,5 +321,27 @@
   });
 </script>
 
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  createChat({
+    webhookUrl: 'https://yairandresnavarrete.app.n8n.cloud/webhook/67026ac6-f5ac-430e-92f0-63f744a29014/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    initialMessages: [
+      '¡Hola! Soy el asistente de ROOKS.',
+      '¿En qué puedo ayudarte hoy?'
+    ],
+    i18n: {
+      en: {
+        title: 'ROOKS',
+        subtitle: 'Tu agencia de diseño web',
+        footer: '',
+        getStarted: 'Nueva conversación',
+        inputPlaceholder: 'Escribe tu mensaje...',
+      }
+    }
+  });
+</script>
 </body>
 </html>
