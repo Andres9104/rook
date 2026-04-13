@@ -279,6 +279,13 @@
     --chat--message--font-size: 0.875rem;
     --chat--input--font-size: 0.875rem;
   }
+  .chat-inputs input:focus,
+  .chat-inputs textarea:focus,
+  .chat-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #e5e7eb !important;
+  }
 </style>
 </head>
 <body>
@@ -635,7 +642,18 @@
   }
 
   setTimeout(setToggleIcon, 300);
-  new MutationObserver(setToggleIcon).observe(document.body, { childList: true, subtree: true });
+
+  function disableArrowHistory() {
+    const input = document.querySelector('.chat-inputs input, .chat-inputs textarea, .chat-input');
+    if (input && !input.dataset.arrowFixed) {
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault();
+      });
+      input.dataset.arrowFixed = '1';
+    }
+  }
+
+  new MutationObserver(() => { setToggleIcon(); disableArrowHistory(); }).observe(document.body, { childList: true, subtree: true });
 </script>
 </body>
 </html>
